@@ -1,0 +1,191 @@
+/* RESET */
+* {
+  box-sizing: border-box;
+}
+
+/* BODY APP STYLE */
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  min-height: 100vh; /* ocupa tela toda */
+  padding: 20px;
+  margin: 0;
+}
+
+/* CONTAINER */
+.container {
+  margin-top: 30px;
+  background: white;
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  animation: fadeIn .5s ease-in-out;
+}
+
+h1, h2 {
+  text-align: center;
+  margin-top: 0;
+}
+
+/* INPUT AREA */
+.input-area {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+input, textarea {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  box-shadow: 3px 2px 5px rgba(0,0,0,0.15);
+  width: 100%;
+}
+
+textarea {
+  resize: none;
+  height: 70px;
+}
+
+/* BOTÕES */
+button {
+  padding: 10px;
+  background: #667eea;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: .3s;
+  border: none;
+  width: 100%;
+}
+
+button:hover {
+  background: #5563c1;
+}
+
+/* LISTA */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin: 10px 0;
+  padding: 12px;
+  border-radius: 10px;
+  animation: slideIn .3s ease;
+}
+
+/* TASK HEADER */
+.task-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* BOTÕES INTERNOS */
+.task-buttons {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.task-buttons button {
+  background: transparent;
+  color: black;
+  width: auto;
+  padding: 5px;
+}
+
+/* STATES */
+.completed {
+  text-decoration: line-through;
+  opacity: .6;
+}
+
+.pinned {
+  border-left: 5px solid gold;
+}
+
+.task-body {
+  margin-top: 6px;
+  font-size: 14px;
+}
+
+.task-link a {
+  color: blue;
+  font-size: 13px;
+}
+
+/* COLOR PICKER */
+#colorPicker {
+  width: 100%;
+  max-width: 120px;
+  height: 45px;
+}
+
+/* DATA */
+small {
+  display: block;
+  margin-top: 5px;
+  font-size: 11px;
+  opacity: .7;
+}
+
+/* ================= RESPONSIVO ================= */
+
+/* TABLET */
+@media (max-width: 768px) {
+  .container {
+    padding: 18px;
+  }
+}
+
+/* CELULAR */
+@media (max-width: 480px) {
+
+  body {
+    padding: 10px;
+    align-items: flex-start;
+  }
+
+  .container {
+    border-radius: 12px;
+    padding: 15px;
+  }
+
+  h1 { font-size: 20px; }
+  h2 { font-size: 18px; }
+
+  .task-top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* ANIMAÇÕES */
+@keyframes slideIn {
+  from {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
